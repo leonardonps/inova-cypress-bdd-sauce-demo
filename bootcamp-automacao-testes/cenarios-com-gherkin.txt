@@ -1,0 +1,42 @@
+Funcionalidade Login de acesso ao site "Swag Labs"
+
+História do usuário
+Como usuário
+Quero logar no site
+Para fazer compras
+
+
+#1 Cenário - Autenticação válida
+
+Dado que o usuário esteja na tela de Login
+Quando digitar "standard_user" no campo "Username" 
+E digitar "secret_sauce" no campo "Password"
+E clicar no botão de "Login"
+Então o sistema deve realizar a autenticação do usuário adequadamente
+E exibir a tela de produtos com o título "Products"
+
+
+#2 Cenário - Autenticação inválida - Usuário inexistente
+
+Dado que o usuário esteja na tela de Login
+Quando digitar "standard_user123" no campo "Username"
+E digitar "secret_sauce" no campo "Password"
+E clicar no botão de "Login"
+Então o sistema deve exibir uma informação alertando que o usuário e senha não combinam com qualquer usuário da aplicação
+
+
+#3 Cenário - Autenticação inválida - Senha inválida
+
+Dado que o usuário esteja na tela de Login
+Quando digitar "standard_user" no campo "Username"
+E digitar "secret_sauce" no campo "Password123"
+E clicar no botão de "Login"
+Então o sistema deve exibir uma informação alertando que o usuário e senha não combinam com qualquer usuário da aplicação
+
+
+#4 Cenário - Autenticação inválida - Usuário em branco
+
+Dado que o usuário esteja na tela de Login
+Quando digitar "secret_sauce" no campo "Password"
+E clicar no botão de "Login"
+Então o sistema deve exibir uma informação alertando que o campo "Username" é obrigatório
