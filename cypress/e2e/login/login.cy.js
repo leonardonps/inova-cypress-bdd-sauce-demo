@@ -18,7 +18,7 @@ context('Acesso a página de login', () => {
         cy.get('[data-test="username"]').type("standard_user");
         cy.get('[data-test="password"]').type('secret_sauce');
         cy.get('[data-test="login-button"]').click();
-        cy.get('.title').contains('Products');
+        cy.get('.title').should('contain.text', 'Products');
     });
 
 })
